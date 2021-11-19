@@ -162,7 +162,7 @@ public class ActivityRecognitionFlutterPlugin implements FlutterPlugin, EventCha
         String result = sharedPreferences
                 .getString(DETECTED_ACTIVITY, "error");
         Log.d("onSharedPreferenceChange", result);
-        if (key!= null && key.equals(DETECTED_ACTIVITY)) {
+        if (key!= null && key.equals(DETECTED_ACTIVITY) && eventSink != null) {
             Log.d(TAG, "Detected activity: " + result);
             eventSink.success(result);
         }
