@@ -22,6 +22,7 @@ public class ForegroundService extends Service {
         Bundle bundle = new Bundle();
         bundle.putString("title", "Foreground service");
         bundle.putString("text", "Foreground monitoring service");
+        bundle.putString("id","1");
         startPluginForegroundService(bundle);
     }
 
@@ -72,6 +73,7 @@ public class ForegroundService extends Service {
         Notification notification = new Notification.Builder(context, "foreground.service.channel")
                 .setContentTitle((CharSequence) extras.get("title"))
                 .setContentText((CharSequence) extras.get("text"))
+                
                 .setOngoing(true)
                 .setSmallIcon(icon == 0 ? 17301514 : icon) // Default is the star icon
                 .build();
